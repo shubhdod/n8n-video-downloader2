@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: yt-dlp-downloader
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: FLASK_ENV
+        value: production

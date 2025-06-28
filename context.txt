@@ -1,0 +1,28 @@
+This backend is built for a video downloader site that uses yt-dlp to process URLs from YouTube, Instagram, TikTok, and more.
+
+It accepts POST requests to the /download endpoint with the following parameters:
+- url: the video or reel URL to be processed
+- type: either video or audio
+- quality: the desired quality (e.g., best, worst, or format code)
+
+🧠 The backend is powered by:
+- Flask (Python web server)
+- yt-dlp (an advanced video downloading tool)
+- Render.com (24/7 hosting with Docker support)
+
+✅ Example request (POST):
+{
+  "url": "https://www.youtube.com/watch?v=example",
+  "type": "video",
+  "quality": "best"
+}
+
+✅ Example response:
+{
+  "output": "https://download-link.mp4",
+  "error": ""
+}
+
+🚨 Notes:
+- If you see a 429: Too Many Requests error from YouTube, yt-dlp may need browser cookies.
+- This API is designed to be lightweight and scalable for web-based video downloaders.
